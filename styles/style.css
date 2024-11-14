@@ -1,0 +1,150 @@
+/* RESET */
+* {
+    box-sizing: border-box;
+    margin: 0;
+
+    list-style-type: none;
+    list-style: none;
+
+    font-family: sans-serif;
+
+    object-fit: cover;
+
+    /* overflow-x: hidden; */
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 4em;
+    /* background-color met classes */
+}
+
+/* MAIN */
+main {
+    details:last-child {
+        margin-bottom: 5em;
+    }
+
+    details {
+        summary {
+            .radio_img{
+                width: 15em;
+                height: 15em;
+                box-shadow: var(-) 4px 4px 4px 1px;
+            }
+
+            span {
+            }
+        }
+
+        section {
+            h2:nth-of-type(1) {
+                @media screen and (min-width: 600px) {
+                }
+            }
+
+            h2:nth-of-type(2) {
+                .radio_veronica {
+                }
+
+                .radio_slam {
+                }
+
+                .radio_100 {
+                }
+
+                .radio_sublime {
+                }
+
+                @media screen and (max-width: 600px) {
+                }
+            }
+
+            .week {
+                @media screen and (min-width: 600px) {
+                    li {
+                    }
+
+                    li:first-child {
+                    }
+                }
+            }
+
+            .highlight {
+            }
+
+            .programma_container {
+                .tijd {
+                    li::after {
+                    }
+    
+                    li:last-child::after {
+                    }
+
+                    /* tijd */
+                    @media screen and (min-width: 600px) {
+                        li {
+                        }
+
+                        li::after {
+                        }
+
+                        /* om de 2 li een gap */
+                        li:nth-child(2n)::after {
+                        }
+                    }
+                }
+
+                .card_direction {
+                    .now_playing {
+                    }
+
+                    article {
+                        h3 {
+                        }
+                
+                        .profile_picture {
+                        }
+                
+                        .tekst {
+                            @media screen and (min-width: 600px) {
+                            }
+                        }
+
+                        .bottom {
+                            @media screen and (min-width: 600px) {
+                            }
+                        }
+
+                        .bottom:hover {
+                        }
+
+                        /* article */
+                        @media screen and (min-width: 600px) {
+                        }
+                    }
+                    /* card_direction */
+                    @media screen and (min-width: 600px) {
+                    }
+                }
+                /* programma_container */
+                @media screen and (min-width: 600px) {
+                }
+            }
+            /* section */
+            @media screen and (min-width: 600px) {
+            }
+        }
+    }
+}
+
+/* centrale plek voor tijdlijn, radiozenders en week */
+/* aria describe by */

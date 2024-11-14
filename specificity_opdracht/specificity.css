@@ -1,0 +1,35 @@
+
+span {
+    font-size: x-large;
+    font-style: italic;
+}
+
+/* Element selector */
+/* de class op de html element is hoger gerankt, dus de element selector, h2, doet hier niks */
+/* deze hs werkt alleen als er geen class is uit mediahuis.css */
+h2 {
+    color: blueviolet;
+}
+
+/* Class selector */
+/* de background van de tekst veranderd naar blue omdat de class, blue, later komt. de nieuwste kleur wordt toegepast */
+.blue {
+    background-color: rgb(48, 170, 200);
+}
+
+
+/* Class volgorde */
+/* de class die in specificity wordt aangegeven wordt gebruikt, omdat deze later gebruikt wordt */
+.text-secondary {
+    color: pink;
+}
+
+/* ID selector */
+/* omdat de ID selector hoger gerankt is, dan class en element, wordt het stuk tekst de kleur van de ID */
+.test {
+    color: hotpink;
+}
+
+#heading {
+    color: rgb(184, 184, 1);
+}
