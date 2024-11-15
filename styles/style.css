@@ -2,15 +2,15 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    padding: 0;
 
     list-style-type: none;
     list-style: none;
 
-    font-family: sans-serif;
+    /* font in mediahuis css */
+    /* font-family: sans-serif; */
 
     object-fit: cover;
-
-    /* overflow-x: hidden; */
 }
 
 a {
@@ -22,129 +22,140 @@ a {
 header {
     display: flex;
     align-items: center;
-    text-align: center;
+    justify-content: center;
+
     height: 4em;
+
     /* background-color met classes */
 }
 
 /* MAIN */
 main {
-    details:last-child {
-        margin-bottom: 5em;
+    display: grid;
+    grid-template-columns: min-content min-content;
+    grid-template-rows: min-content min-content;
+    place-content: center;
+    gap: 2em;
+
+    .week {
+        display: flex;
+        flex-direction: row;
+
+        position: sticky;
+        top: 0.5em;
+        z-index: 10;
+
+        /* overflow-x: auto;
+        overflow-y: hidden; */
+
+        li {
+            padding: 0.5em;
+            margin-top: 0.1em;
+            border: 1px solid black;
+            border-left: none;
+        }
+
+        li:first-child {
+            border-left: 1px solid black;
+            margin-left: 2em;
+        }
+
+        li:last-child {
+            margin-right: 2em;
+        }
+    }
+
+    .tijd {
+        li {
+            padding-top: 1em;
+            padding-bottom: 1em;
+            margin-left: 1.5em;
+        }
+
+        li::after {
+            content: "- - - - -";
+            display: block;
+            transform-origin: top left;
+            transform: rotate(90deg) translateY(-130%);
+        }
+
+        li:last-child::after {
+            content: "";
+        }
+    }
+
+    /* week en tijd is niet te zien totdat een details open gaat */
+    .week, .tijd {
+        display: none;
     }
 
     details {
         summary {
-            .radio_img{
-                width: 15em;
-                height: 15em;
-                box-shadow: var(-) 4px 4px 4px 1px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 2em;
+            gap: 1em;
+
+            img{
+                width: 10em;
+                height: 10em;
+                box-shadow: #0091ff 4px 4px 4px 1px;
             }
 
-            span {
-            }
+            /* span bold met mediahuis css */
         }
 
         section {
-            h2:nth-of-type(1) {
-                @media screen and (min-width: 600px) {
-                }
-            }
+            article {
+                border: 1px solid black;
 
-            h2:nth-of-type(2) {
-                .radio_veronica {
-                }
+                display: grid;
+                grid-template-columns: min-content min-content;
+                grid-template-rows: min-content min-content min-content;
 
-                .radio_slam {
-                }
-
-                .radio_100 {
+                .titel {
+                    grid-column: 2;
+                    grid-row: 1;
                 }
 
-                .radio_sublime {
+                .profile_picture {
+                    grid-column: 1;
+                    grid-row: 1;
+
+                    width: 7em;
+                    border: 1px solid #000000;
+                    border-radius: 10px;
+                    height: auto;
+                    object-fit: cover;
                 }
 
-                @media screen and (max-width: 600px) {
-                }
-            }
+                .info {
+                    grid-column: 1 / span 2;
+                    grid-row: 2;
 
-            .week {
-                @media screen and (min-width: 600px) {
-                    li {
-                    }
-
-                    li:first-child {
-                    }
-                }
-            }
-
-            .highlight {
-            }
-
-            .programma_container {
-                .tijd {
-                    li::after {
-                    }
-    
-                    li:last-child::after {
-                    }
-
-                    /* tijd */
-                    @media screen and (min-width: 600px) {
-                        li {
-                        }
-
-                        li::after {
-                        }
-
-                        /* om de 2 li een gap */
-                        li:nth-child(2n)::after {
-                        }
-                    }
+                    grid-area: tekst;
+                    max-width: 11em;
+                    justify-self: center;
                 }
 
-                .card_direction {
-                    .now_playing {
-                    }
-
-                    article {
-                        h3 {
-                        }
-                
-                        .profile_picture {
-                        }
-                
-                        .tekst {
-                            @media screen and (min-width: 600px) {
-                            }
-                        }
-
-                        .bottom {
-                            @media screen and (min-width: 600px) {
-                            }
-                        }
-
-                        .bottom:hover {
-                        }
-
-                        /* article */
-                        @media screen and (min-width: 600px) {
-                        }
-                    }
-                    /* card_direction */
-                    @media screen and (min-width: 600px) {
-                    }
+                .dj {
+                    grid-column: 1;
+                    grid-row: 3;
                 }
-                /* programma_container */
-                @media screen and (min-width: 600px) {
+
+                .link {
+                    grid-column: 2;
+                    grid-row: 3;
                 }
-            }
-            /* section */
-            @media screen and (min-width: 600px) {
             }
         }
     }
-}
 
-/* centrale plek voor tijdlijn, radiozenders en week */
-/* aria describe by */
+    /* als details open is is de summary img niet meer op beeld */
+    details[open] {
+        summary {
+            display: none;
+        }
+    }
+}
