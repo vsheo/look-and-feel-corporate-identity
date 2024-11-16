@@ -18,6 +18,7 @@ a {
     color: black;
 }
 
+
 /* HEADER */
 header {
     display: flex;
@@ -31,19 +32,24 @@ header {
 
 /* MAIN */
 main {
+    /* MAIN INDELEN */
     display: grid;
-    grid-template-columns: min-content min-content;
-    grid-template-rows: min-content min-content;
-    place-content: center;
-    gap: 2em;
+    grid-template-areas:
+    "week week"
+    "tijd section";
+    
 
+    /* WEEK EN TIJD LIST */
     .week {
+        grid-area: week;
+    
         display: flex;
         flex-direction: row;
 
         position: sticky;
-        top: 0.5em;
+        top: 0em;
         z-index: 10;
+        height: min-content;
 
         /* overflow-x: auto;
         overflow-y: hidden; */
@@ -66,6 +72,8 @@ main {
     }
 
     .tijd {
+        grid-area: tijd;
+
         li {
             padding-top: 1em;
             padding-bottom: 1em;
@@ -85,11 +93,13 @@ main {
     }
 
     /* week en tijd is niet te zien totdat een details open gaat */
-    .week, .tijd {
+    .hidden {
         display: none;
     }
 
     details {
+        grid-area: section;
+
         summary {
             display: flex;
             flex-direction: column;
@@ -106,22 +116,23 @@ main {
             /* span bold met mediahuis css */
         }
 
+        /* PROGRAMMA KAARTJES */
         section {
             article {
                 border: 1px solid black;
 
                 display: grid;
-                grid-template-columns: min-content min-content;
-                grid-template-rows: min-content min-content min-content;
+                grid-template-areas: 
+                "pic titel"
+                "info info"
+                "dj link";
 
                 .titel {
-                    grid-column: 2;
-                    grid-row: 1;
+                    grid-area: titel;
                 }
 
                 .profile_picture {
-                    grid-column: 1;
-                    grid-row: 1;
+                    grid-area: pic;
 
                     width: 7em;
                     border: 1px solid #000000;
@@ -131,22 +142,18 @@ main {
                 }
 
                 .info {
-                    grid-column: 1 / span 2;
-                    grid-row: 2;
+                    grid-area: info;
 
-                    grid-area: tekst;
                     max-width: 11em;
                     justify-self: center;
                 }
 
                 .dj {
-                    grid-column: 1;
-                    grid-row: 3;
+                    grid-area: dj;
                 }
 
                 .link {
-                    grid-column: 2;
-                    grid-row: 3;
+                    grid-area: link;
                 }
             }
         }
