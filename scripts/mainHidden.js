@@ -19,7 +19,7 @@ for (let i = 0; i < allDetails.length; i++) {
         if (detail.open) {
             week.classList.remove('hidden');
             tijd.classList.remove('hidden');
-            nav.classList.remove('hidden');
+            nav.classList.remove('nav-hidden');
             player.classList.remove('hidden');
         }
     });

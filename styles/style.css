@@ -67,6 +67,22 @@ main {
         li:last-child {
             margin-right: 2em;
         }
+
+        @media screen and (min-width: 800px) {
+            grid-area: week;
+
+            flex-direction: column;
+            position: static;
+            width: 5em;
+            height: 25em;
+            margin-left: 2em;
+            overflow-x: hidden;
+            overflow-y: auto;
+
+            li:first-child {
+                margin-left: 0.6em;
+            }
+        }
     }
 
     .tijd {
@@ -86,10 +102,24 @@ main {
             transform: rotate(90deg) translateY(-130%);
             margin-top: 1em;
             margin-bottom: 1em;
+
+            @media screen and (min-width: 800px) {
+                display: inline;
+                transform: none;
+                margin-left: 1em;
+            }
         }
 
         li:last-child::after {
             content: "";
+        }
+
+        @media screen and (min-width: 800px) {
+            grid-area: tijd;
+
+            display: flex;
+            flex-direction: row;
+            width: 2em;
         }
     }
 
@@ -99,7 +129,12 @@ main {
         "a b"
         "c d";
         gap: 1em;
-        padding: 1em; 
+        padding: 1em;
+
+        @media screen and (min-width: 800px) {
+            display: flex;
+            flex-direction: column;
+        }
     }
 
     .veronica {
@@ -129,9 +164,19 @@ main {
                 width: 10em;
                 height: 10em;
                 box-shadow: #0091ff 4px 4px 4px 1px;
+
+                @media screen and (min-width: 800px) {
+                    border-radius: 20px;
+                    width: 70vw;
+                }
             }
 
-            /* span bold met mediahuis css */
+            @media screen and (min-width: 800px) {
+                align-items: start;
+                span {
+                    display: none;
+                }
+            }
         }
 
         /* PROGRAMMA KAARTJES */
@@ -204,6 +249,14 @@ main {
                     }
                 }
             }
+
+            @media screen and (min-width: 800px) {
+                flex-direction: row;
+            }
+        }
+
+        @media screen and (min-width: 800px) {
+            grid-area: detail;
         }
     }
 
@@ -215,10 +268,11 @@ main {
     }
 
     nav {
+        background-color: aquamarine;
+
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        background-color: aquamarine;
         border-radius: 20px;
 
         /* rechts in het midden */
@@ -256,6 +310,14 @@ main {
                 width: 11em;
             }
         }
+
+        @media screen and (min-width: 800px) {
+            display: none;
+        }
+    }
+
+    .nav-hidden {
+        display: none;
     }
 
     .nav-active {
@@ -312,5 +374,17 @@ main {
     /* week, tijd, nav en de player zijn niet te zien totdat een details open gaat */
     .hidden {
         display: none;
+
+        @media screen and (min-width: 800px) {
+            display: block;
+        }
+    }
+
+    /* MAIN */
+    @media screen and (min-width: 800px) {
+        display: grid;
+        grid-template-areas:
+        "tijd tijd"
+        "week detail"
     }
 }
