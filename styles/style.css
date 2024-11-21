@@ -36,8 +36,7 @@ main {
     display: grid;
     grid-template-areas:
     "week week"
-    "tijd section";
-    
+    "tijd section";    
 
     /* WEEK EN TIJD LIST */
     .week {
@@ -51,18 +50,17 @@ main {
         z-index: 10;
         height: min-content;
 
-        /* overflow-x: auto;
-        overflow-y: hidden; */
+        overflow-x: auto;
+        overflow-y: hidden;
 
         li {
-            padding: 0.5em;
+            /* border: 1px solid black; */
+            padding: 0.8em;
             margin-top: 0.1em;
-            border: 1px solid black;
-            border-left: none;
+            margin-left: 0.6em;
         }
 
         li:first-child {
-            border-left: 1px solid black;
             margin-left: 2em;
         }
 
@@ -77,14 +75,17 @@ main {
         li {
             padding-top: 1em;
             padding-bottom: 1em;
-            margin-left: 1.5em;
+            margin-left: 1em;
         }
 
         li::after {
             content: "- - - - -";
             display: block;
+            white-space: nowrap;
             transform-origin: top left;
             transform: rotate(90deg) translateY(-130%);
+            margin-top: 1em;
+            margin-bottom: 1em;
         }
 
         li:last-child::after {
@@ -92,9 +93,26 @@ main {
         }
     }
 
-    /* week en tijd is niet te zien totdat een details open gaat */
-    .hidden {
-        display: none;
+    .details-container {
+        display: grid;
+        grid-template-areas: 
+        "a b"
+        "c d";
+        gap: 1em;
+        padding: 1em; 
+    }
+
+    .veronica {
+        grid-area: a;
+    }
+    .slam {
+        grid-area: b;
+    }
+    .sublime {
+        grid-area: c;
+    }
+    .honderd {
+        grid-area: d;
     }
 
     details {
@@ -118,27 +136,42 @@ main {
 
         /* PROGRAMMA KAARTJES */
         section {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+
             article {
-                border: 1px solid black;
+                box-shadow: 0 0 8px #00000014;
+                border-radius: 10px;
+                padding: 0.5em;
+                width: 16.2em;
 
                 display: grid;
+                grid-template-columns: min-content 1fr;
+                grid-template-rows: min-content min-content min-content;
                 grid-template-areas: 
                 "pic titel"
-                "info info"
-                "dj link";
+                ". info"
+                ". djlink";
+
+                position: relative;
+                right: 1em;
 
                 .titel {
                     grid-area: titel;
+                    justify-self: start;
+                    align-self: center;
+                    margin-left: 0.3em;
                 }
 
                 .profile_picture {
                     grid-area: pic;
 
-                    width: 7em;
-                    border: 1px solid #000000;
-                    border-radius: 10px;
+                    place-content: center;
+                    border-radius: 50%;
                     height: auto;
-                    object-fit: cover;
+                    width: 3.5em;
+                    height: 3.5em;
                 }
 
                 .info {
@@ -146,14 +179,29 @@ main {
 
                     max-width: 11em;
                     justify-self: center;
+                    margin-bottom: 1em;
                 }
 
-                .dj {
-                    grid-area: dj;
-                }
+                .dj_link {
+                    grid-area: djlink;
 
-                .link {
-                    grid-area: link;
+                    display: flex;
+                    justify-content: space-between;
+
+                    p {
+                        place-content: center;
+                    }
+                
+                    a {
+                        border-radius: 50%;
+                        min-width: 2em;
+                        min-height: 2em;
+                        /* de cirkel */
+                        align-self: end;
+                        /* '>' in de cirkel */
+                        text-align: center;
+                        place-content: center;
+                    }
                 }
             }
         }
@@ -164,5 +212,105 @@ main {
         summary {
             display: none;
         }
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: aquamarine;
+        border-radius: 20px;
+
+        /* rechts in het midden */
+        position: fixed;
+        right: 0;
+        top: 50%;
+        transform: translate(90%, -50%);
+        transition: 0.5s;
+
+        padding: 1em;
+        height: 17em;
+        width: 12em;
+
+        .openNav {
+            position: fixed;
+            top: 50%;
+            transform: translate(0, -50%);
+            background-color: aquamarine;
+            border: none;
+            border-radius: 150px;
+
+            left: -0.8em;
+            width: 2em;
+            height: 2em;
+        }
+
+        .openDetail {
+            margin-left: 1.5em;
+            border: none;
+            background-color: inherit;
+
+            img {
+                border-radius: 15px;
+                height: 4em;
+                width: 11em;
+            }
+        }
+    }
+
+    .nav-active {
+        transform: translate(0, -50%);
+        transition: 0.5s;
+    }
+
+    .player {
+        box-shadow: 0 0 16px #00000029;
+        border-radius: 10px;
+
+        position: fixed;
+        bottom: 2em;
+        left: 50%;
+        transform: translateX(-50%);
+        width: clamp(40vw, 80vw, 30em);
+        height: 5em;
+
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        img {
+            border-radius: 10px;
+            width: 4em;
+            height: 4em;
+            margin-left: 0.5em;
+        }
+
+        .player_info {
+            position: relative;
+            right: 1.5em;
+
+            h2 {
+                font-size: small;
+            }
+
+            p {
+                font-size: small;
+            }
+        }
+
+        button {
+            color: white;
+            border-radius: 50%;
+            border: none;
+            height: 3em;
+            width: 3em;
+            margin-right: 1em;
+        }
+    }
+
+    /* week, tijd, nav en de player zijn niet te zien totdat een details open gaat */
+    .hidden {
+        display: none;
     }
 }

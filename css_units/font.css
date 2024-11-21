@@ -1,0 +1,44 @@
+/* https://www.w3schools.com/cssref/css_units.php */
+
+
+html {
+    font-family: helvetica;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* 10 tot 12 woorden met cm en mm */
+section:nth-of-type(1) {
+    font-size: 5mm;
+
+    p {
+        max-width: 15cm;
+    }
+}
+
+/* 10 tot 12 woorden met px en em */
+section:nth-of-type(2) {
+    font-size: 16px;
+
+    p {
+        max-width: 30em;
+    }
+}
+
+/* 10 tot 12 woorden met relative units */
+section:nth-of-type(3) {
+    font-size: 1.4rem;
+
+    p {
+        max-width: 55ch;
+    }
+}
+
+/* 10 tot 12 woorden met Viewport relative units */
+section:nth-of-type(4) {
+    font-size: 2.5vh;
+
+    p {
+        max-width: 35vmax;
+    }
+}
