@@ -1,4 +1,4 @@
-// als de button in de nav geklikt wordt dan slide de restvan de nav in beeld.
+// als de button in de nav geklikt wordt dan slide de rest van de nav in beeld.
 // door een class toe te voegen aan de nav
 
 
