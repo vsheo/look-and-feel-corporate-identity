@@ -70,7 +70,7 @@ main {
             border-radius: 10px;
             width: 6em;
             height: 25em;
-            margin-left: 2em;
+            margin-left: 3em;
 
             overflow-x: hidden;
             overflow-y: auto;
@@ -159,169 +159,180 @@ main {
         gap: 1em;
         padding: 1em;
 
+        :nth-of-type(1) {
+            grid-area: a;
+        }
+        :nth-of-type(2) {
+            grid-area: b;
+        }
+        :nth-of-type(3) {
+            grid-area: c;
+        }
+        :nth-of-type(4) {
+            grid-area: d;
+        }
+
         /* DETAILS-CONTAINER */
         @media screen and (min-width: 800px) {
             display: flex;
             flex-direction: column;
             margin-top: 1em;
             margin-left: 2em;
-        }
-    }
 
-    .veronica {
-        grid-area: a;
-    }
-    .slam {
-        grid-area: b;
-    }
-    .sublime {
-        grid-area: c;
-    }
-    .honderd {
-        grid-area: d;
-    }
+            scroll-snap-type: y mandatory;
 
-    details {
-        grid-area: section;
+            /* DETAILS SNAP */
+            .snapElement {
+                background-color: coral;
 
-        /* DETAILS */
-        @media screen and (min-width: 800px) {
-            grid-area: detail;
-
-            section::-webkit-scrollbar {
-                height: 10px;
-            }
-            
-            section::-webkit-scrollbar-thumb {
-                background: red; 
-                border-radius: 10px;
+                scroll-snap-align: start;
             }
         }
 
-        summary {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 2em;
-            gap: 1em;
-
-            img{
-                width: 10em;
-                height: 10em;
-                box-shadow: #0091ff 4px 4px 4px 1px;
-
-                @media screen and (min-width: 800px) {
-                    border-radius: 20px;
-                    height: 15vh;
-                    width: 80vw;
-                }
-            }
-
-           @media screen and (min-width: 800px) {
-                align-items: start;
-                span {
-                    display: none;
-                }
-            } 
-        }
-
-        /* PROGRAMMA KAARTJES */
-        section {
-            display: flex;
-            flex-direction: column;
-            gap: 1em;
-
-            /* SECTION */
+        details {
+            grid-area: section;
+    
+            /* DETAILS */
             @media screen and (min-width: 800px) {
-                flex-direction: row;
-                border-radius: 20px;
+                grid-area: detail;
 
-                width: 100vw;
-                overflow-x: auto;
-                overflow-y: hidden;
+                scroll-snap-align: start;
 
-                h2 {
-                    display: none;
+                section::-webkit-scrollbar {
+                    height: 10px;
+                }
+
+                section::-webkit-scrollbar-thumb {
+                    background: red; 
+                    border-radius: 10px;
                 }
             }
 
-            article {
-                box-shadow: 0 0 8px #00000014;
-                border-radius: 10px;
-                padding: 0.5em;
-                max-height: 20em;
-                width: 16.2em;
-
-                display: grid;
-                grid-template-columns: min-content 1fr;
-                grid-template-rows: min-content min-content min-content;
-                grid-template-areas: 
-                "pic titel"
-                ". info"
-                ". djlink";
-
-                position: relative;
-                right: 1em;
-
-                /* ARTICLE */
-                @media screen and (min-width: 800px) {
-                    grid-template-columns: min-content 1fr;
-                    grid-template-rows: min-content min-content 1fr;
-
-                    min-height: 20em;
-                    min-width: 16.5em;
-                    margin: 1em;
-                }
-
-                .titel {
-                    grid-area: titel;
-                    justify-self: start;
-                    align-self: center;
-                    margin-left: 0.3em;
-                }
-
-                .profile_picture {
-                    grid-area: pic;
-
-                    place-content: center;
-                    border-radius: 50%;
-                    height: auto;
-                    width: 3.5em;
-                    height: 3.5em;
-                }
-
-                .info {
-                    grid-area: info;
-
-                    max-width: 11em;
-                    justify-self: center;
-                    margin-bottom: 1em;
-                }
-
-                .dj_link {
-                    grid-area: djlink;
-
-                    display: flex;
-                    justify-content: space-between;
-
-                    p {
-                        place-content: center;
-
-                        @media screen and (min-width: 800px) {
-                            justify-self: end;
-                            align-self: end;
-                        }
+            summary {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 2em;
+                gap: 1em;
+    
+                img{
+                    width: 10em;
+                    height: 10em;
+                    box-shadow: #0091ff 4px 4px 4px 1px;
+    
+                    @media screen and (min-width: 800px) {
+                        border-radius: 20px;
+                        height: 15vh;
+                        width: 80vw;
                     }
-                
-                    a {
-                        border-radius: 50%;
-                        min-width: 2em;
-                        min-height: 2em;
-                        /* de cirkel */
-                        align-self: end;
-                        /* '>' in de cirkel */
-                        text-align: center;
+                }
+
+                span {
+                    @media screen and (min-width: 800px) {
+                        display: none;
+
+                    }
+                }
+            }
+    
+            /* PROGRAMMA KAARTJES */
+            section {
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+    
+                /* SECTION */
+                @media screen and (min-width: 800px) {
+                    flex-direction: row;
+                    border-radius: 20px;
+    
+                    width: 100vw;
+                    overflow-x: auto;
+                    overflow-y: hidden;
+    
+                    h2 {
+                        display: none;
+                    }
+                }
+    
+                article {
+                    box-shadow: 0 0 8px #00000014;
+                    border-radius: 10px;
+                    padding: 0.5em;
+                    max-height: 20em;
+                    width: 16.2em;
+    
+                    display: grid;
+                    grid-template-columns: min-content 1fr;
+                    grid-template-rows: min-content min-content min-content;
+                    grid-template-areas: 
+                    "pic titel"
+                    ". info"
+                    ". djlink";
+    
+                    position: relative;
+                    right: 1em;
+    
+                    /* ARTICLE */
+                    @media screen and (min-width: 800px) {
+                        grid-template-columns: min-content 1fr;
+                        grid-template-rows: min-content min-content 1fr;
+    
+                        min-height: 20em;
+                        min-width: 16.5em;
+                        margin: 1em;
+                    }
+    
+                    .titel {
+                        grid-area: titel;
+                        justify-self: start;
+                        align-self: center;
+                        margin-left: 0.3em;
+                    }
+    
+                    .profile_picture {
+                        grid-area: pic;
+    
                         place-content: center;
+                        border-radius: 50%;
+                        height: auto;
+                        width: 3.5em;
+                        height: 3.5em;
+                    }
+    
+                    .info {
+                        grid-area: info;
+    
+                        max-width: 11em;
+                        justify-self: center;
+                        margin-bottom: 1em;
+                    }
+    
+                    .dj_link {
+                        grid-area: djlink;
+    
+                        display: flex;
+                        justify-content: space-between;
+    
+                        p {
+                            place-content: center;
+    
+                            @media screen and (min-width: 800px) {
+                                justify-self: end;
+                                align-self: end;
+                            }
+                        }
+                    
+                        a {
+                            border-radius: 50%;
+                            min-width: 2em;
+                            min-height: 2em;
+                            /* de cirkel */
+                            align-self: end;
+                            /* '>' in de cirkel */
+                            text-align: center;
+                            place-content: center;
+                        }
                     }
                 }
             }
