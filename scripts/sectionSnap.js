@@ -4,6 +4,15 @@ const snapElement = document.querySelector(".snapElement");
 const snapDetails = document.querySelectorAll("details");
 
 
+// run openSnapElement wanneer de pagina inlaad en wanneer de pagina verandert van grootte
+window.addEventListener('load', openSnapElement);
+window.addEventListener('resize', openSnapElement);
+
+snapDetails.forEach(section => {
+	section.addEventListener("click", scrollToTop);
+});
+
+
 // wanneer de pagina inlaad is de details element met de class snapElement open
 function openSnapElement() {
     if (window.innerWidth >= 800) {
@@ -26,11 +35,3 @@ function scrollToTop(e) {
 	theDetail.classList.add("snapElement");
 }
 
-snapDetails.forEach(section => {
-	section.addEventListener("click", scrollToTop);
-});
-
-
-// run openSnapElement wanneer de pagina inlaad en wanneer de pagina verandert van grootte
-window.addEventListener('load', openSnapElement);
-window.addEventListener('resize', openSnapElement);
