@@ -1,26 +1,19 @@
 // https://codepen.io/shooft/pen/WNVZYeZ
 
+const snapElement = document.querySelector(".snapElement");
+const snapDetails = document.querySelectorAll("details");
 
 
 // wanneer de pagina inlaad is de details element met de class snapElement open
 function openSnapElement() {
-    const snapElement = document.querySelector(".snapElement");
     if (window.innerWidth >= 800) {
         snapElement.open = true;
     }
 }
-// run JS wanneer de pagina inlaad
-window.addEventListener('load', openSnapElement);
-// run JS wanneer de pagina verandert van grootte
-window.addEventListener('resize', openSnapElement);
 
 
-
-
-const snapDetails = document.querySelectorAll("details");
-
-function scrollToCenter(e) {
-// 	oude niet meer open
+function scrollToTop(e) {
+	// oude niet meer open
 	const nuOpen = document.querySelector(".snapElement");
 	if (nuOpen) {
         nuOpen.open = false;
@@ -34,5 +27,10 @@ function scrollToCenter(e) {
 }
 
 snapDetails.forEach(section => {
-	section.addEventListener("click", scrollToCenter);
+	section.addEventListener("click", scrollToTop);
 });
+
+
+// run openSnapElement wanneer de pagina inlaad en wanneer de pagina verandert van grootte
+window.addEventListener('load', openSnapElement);
+window.addEventListener('resize', openSnapElement);

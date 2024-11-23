@@ -1,4 +1,5 @@
-// als 1 details open gaat, dan gaan de andere op display none
+// op mobile versie als er in de radio zenders nav geklikt wordt op een radiozender.
+// dan de programma van die radiozender open.
 
 
 detailButton.forEach((button) => {
