@@ -120,6 +120,8 @@ main {
             flex-direction: row;
             position: sticky;
             top: 0;
+            z-index: 20;
+
             left: 10em;
             width: 2em;
         }
@@ -128,6 +130,10 @@ main {
             padding-top: 1em;
             padding-bottom: 1em;
             margin-left: 1em;
+        }
+
+        li:last-child {
+            margin-bottom: 6em;
         }
 
         li::after {
@@ -167,9 +173,27 @@ main {
         }
         :nth-of-type(3) {
             grid-area: c;
+
+            section {
+                margin-top: -35em;
+
+                /* section naar boven brengen op mobile versie */
+                @media screen and (min-width: 800px) {
+                    margin-top: 0;
+                }
+            }
         }
         :nth-of-type(4) {
             grid-area: d;
+
+            /* section naar boven brengen op mobile versie */
+            section {
+                margin-top: -35em;
+
+                @media screen and (min-width: 800px) {
+                    margin-top: 0;
+                }
+            }
         }
 
         /* DETAILS-CONTAINER */
@@ -183,8 +207,6 @@ main {
 
             /* DETAILS SNAP */
             .snapElement {
-                background-color: coral;
-
                 scroll-snap-align: start;
             }
         }
@@ -218,7 +240,8 @@ main {
                 img{
                     width: 10em;
                     height: 10em;
-                    box-shadow: #0091ff 4px 4px 4px 1px;
+                    box-shadow: 5px 5px 3px 0px #00000014;
+
     
                     @media screen and (min-width: 800px) {
                         border-radius: 20px;
