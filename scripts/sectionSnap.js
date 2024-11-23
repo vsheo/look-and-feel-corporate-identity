@@ -22,16 +22,18 @@ function openSnapElement() {
 
 
 function scrollToTop(e) {
-	// oude niet meer open
-	const nuOpen = document.querySelector(".snapElement");
-	if (nuOpen) {
-        nuOpen.open = false;
-		nuOpen.classList.remove("snapElement");
+	// alleen op desktop
+    if (window.innerWidth >= 800) {
+		// oude niet meer open
+		const nuOpen = document.querySelector(".snapElement");
+		if (nuOpen) {
+			nuOpen.open = false;
+			nuOpen.classList.remove("snapElement");
+		}
+		
+		// nieuwe naar het midden
+		const theDetail = e.currentTarget;
+		theDetail.scrollIntoView({ behavior: "smooth", block: "start" });
+		theDetail.classList.add("snapElement");
 	}
-	
-// 	nieuwe naar het midden
-	const theDetail = e.currentTarget;
-	theDetail.scrollIntoView({ behavior: "smooth", block: "start" });
-	theDetail.classList.add("snapElement");
 }
-
