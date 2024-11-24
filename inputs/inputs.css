@@ -1,0 +1,97 @@
+
+/* layout */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .input-layout {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 2em;
+    }
+}
+
+/* BUTTON */
+/* https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/button */
+.button {
+    border: none;
+    border-radius: 50%;
+    height: 5em;
+    width: 5em;
+    color: white;
+    box-shadow:
+    inset 1px 1px 1px 1px rgb(255 255 255 / 60%),
+    inset -2px -2px 3px rgb(0 0 0 / 60%);
+    background-image: linear-gradient(
+        to top left,
+        rgb(230, 117, 232),
+        rgb(65, 4, 68)
+      );
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: rgb(212, 202, 212);
+}
+
+/* inset: top right bottom left */
+/* inset: 1em, alle 4 worden 1em */
+/* inset: 1em 2em, 1em=top+bottom, 2em=left+right */
+/* inset: 1em 2em 3em, 1em=top, 2em=left+right, 3em=bottom */
+.button:active {
+    transform: scale(1.1);  
+    box-shadow:
+    /* 60% = oppacity */
+    inset -2px -2px 3px rgb(255 255 255 / 60%),
+    inset 2px 2px 3px rgb(0 0 0 / 60%);
+    color: black;
+}
+
+
+/* CHECKBOX */
+/* https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox */
+input[type="checkbox"] {
+    accent-color: rgb(0, 255, 81);
+}
+
+
+/* DATE */
+/* https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date */
+input[type="date"] {
+    background-color: rgb(48, 48, 68);
+    color: white;
+    margin: 0.4rem 0;
+}
+
+
+/* RANGE */
+/* https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range */
+input[type="range"] {
+    accent-color: black;
+    height: 0.3em;
+}
+
+
+
+/* https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/search */
+.search-area {
+    display: flex;
+    flex-direction: row;
+}
+input[type="search"] {
+    border: none;
+    border-bottom: 2px solid black;
+    margin-right: 1em;
+
+}
+
+.submit {
+    border: 1px solid black;
+    border-radius: 1em;
+    background-color: rgb(78, 173, 108);
+    color: white;
+    padding: 0.5em 1em;
+    cursor: pointer;
+}
