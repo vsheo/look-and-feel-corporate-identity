@@ -172,12 +172,30 @@ main {
         /* DETAILS POSITIE */
         :nth-of-type(1) {
             grid-area: a;
+
+            img {
+                @media screen and (min-width: 800px) {
+                    background-color: #0091FF;
+                }
+            }
         }
         :nth-of-type(2) {
             grid-area: b;
+
+            img {
+                @media screen and (min-width: 800px) {
+                    background-color: #E60063;
+                }
+            }
         }
         :nth-of-type(3) {
             grid-area: c;
+
+            img {
+                @media screen and (min-width: 800px) {
+                    background-color: #10A637;
+                }
+            }
 
             section {
                 margin-top: -35em;
@@ -190,6 +208,12 @@ main {
         }
         :nth-of-type(4) {
             grid-area: d;
+
+            img {
+                @media screen and (min-width: 800px) {
+                    background-color: #CCFFA3;
+                }
+            }
 
             /* section naar boven brengen op mobile versie */
             section {
@@ -257,6 +281,7 @@ main {
                         border-radius: 20px;
                         height: 15vh;
                         width: 80vw;
+                        object-fit: contain;                                /*...............................*/
                     }
                 }
 

@@ -27,6 +27,7 @@ function scrollToTop(e) {
 		// oude niet meer open
 		const nuOpen = document.querySelector(".snapElement");
 		if (nuOpen) {
+			// section die open is, dicht maken
 			nuOpen.open = false;
 			nuOpen.classList.remove("snapElement");
 		}
