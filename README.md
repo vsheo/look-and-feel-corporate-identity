@@ -72,6 +72,13 @@ de website elementen die standaard niet te zien zijn: <br /> <br />
 
 ### CSS
 
+Voor deze sprint heb ik gebruik gemaakt van een gezaamelijke stylesheet voor:
+- tekst kleur
+- achtergrond kleur
+- en typografie
+
+uitleg hoe stylesheet werkt
+
 
 ### javaScript
 
