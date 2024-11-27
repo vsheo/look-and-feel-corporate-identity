@@ -75,6 +75,40 @@ de website elementen die standaard niet te zien zijn: <br /> <br />
 
 ### javaScript
 
+closeDetail.js <br />
+Dit is de javaScript die 3 details weg haalt als er op eentje geklikt wordt. <br />
+https://github.com/vsheo/look-and-feel-corporate-identity/blob/main/scripts/closeDetail.js#L1C1-L18C4
+
+mainHidden.js <br />
+In de main zijn er elementen die standaard op display none zijn. Met deze code wordt de class 'hidden' van deze elementen weg gehaald, zodat ze in beeld komen <br />
+https://github.com/vsheo/look-and-feel-corporate-identity/blob/main/scripts/mainHidden.js
+
+openNav.js <br />
+Op de mobiele site is er een nav voor navigatie tussen radiozenders. deze is bijna helemaal buiten beeld.
+aan de rechterkant van de scherm is er een knop, als die geklikt wordt dan krijgt de nav een class.
+Deze class gebruikt een transform om de nav in beeld te brengen. <br />
+https://github.com/vsheo/look-and-feel-corporate-identity/blob/main/scripts/openNav.js
+
+sectionColor.js <br />
+Deze code geeft 2 classes aan alle sections en ook 2 classes aan alle articles.
+Deze classes zorgen ervoor dat de sections en articles kleur krijgen, op de desktop versie.
+- Dit wordt gedaan m.b.v een array en een for loop.
+- De for loop gaat door de array en geeft de eerste class aan de eerste section.
+- Voordat deze loop af is, is er nog een loop die door de articles gaat.
+- De 2de loop geeft dezelfde class aan alle articles van deze section.
+- Daarna begint de eerste loop opnieuw voor de volgende section. <br />
+
+https://github.com/vsheo/look-and-feel-corporate-identity/blob/main/scripts/sectionColor.js
+
+sectionSnap.js <br />
+Op de desktop versie zorgt deze code ervoor dat de programma, van de radiozender, naar boven gaat als het geklikt wordt. <br />
+https://github.com/vsheo/look-and-feel-corporate-identity/blob/main/scripts/sectionSnap.js
+
+navdetails.js en sametimeScroll.js <br />
+- navDetails is om door de programmas van radiozenders  te gaan op de mobiele versie.
+- sametimeScroll moet ervoor zorgen, dat er op de desktop site, de tijd lijn mee beweegt als de gebruiker door het programma gaat.
+
+Deze 2 functies heb ik nog niet werkend kunnen krijgen.
 
 
 ## Bronnen
