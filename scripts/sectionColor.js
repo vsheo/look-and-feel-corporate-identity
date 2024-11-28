@@ -6,10 +6,10 @@ const articles = document.querySelectorAll('article');
 
 // de classes die toegevoegd moeten worden
 const primary = ["primary"]
-const background = ["background-neutral"]
+const background = ["neutral"]
 
 const primaryColor = ["veronica-primary", "slam-primary", "honderdp-primary", "sublime-primary"]
-const backgroundColor =["veronica-background-neutral", "slam-background-neutral", "honderdp-background-neutral", "sublime-background-neutral"]
+const backgroundColor =["veronica-neutral", "slam-neutral", "honderdp-neutral", "sublime-neutral"]
 
 // Dit alleen op desktop versie uit voeren
 if (window.innerWidth >= 800) {
@@ -24,7 +24,6 @@ if (window.innerWidth >= 800) {
             articles[a].classList.add(background[0]);
             articles[a].classList.add(backgroundColor[q]);
         }
-        q++
     }
 }
 
