@@ -247,27 +247,26 @@
             <article class="tekst">
                 <h3>Hoe werkt dit?</h3>
                 <p>De classes die eindigen op 'primary' hebben allemaal dezelfde variabelenamen, maar hebben allemaal een andere kleur opgeslagen.
-                    <b><i>veronica-primary, slam-primary, honderdp-primary en sublime-primary.</i></b>
                     de classes <b><i>primary</i></b>, <b><i>secondary</i></b> en <b><i>neutral</i></b> hebben alleen een CSS property, 'background-color'
                 </p>
-                <p>- classes met de benaming <b><i>brand-primary</i></b>, <b><i>brand-secondary</i></b> hebben alleen de kleuren opgeslagen als een variabel</p>
+                <p>- classes met de benaming <b><i>veronica-primary, slam-primary, honderdp-primary en sublime-primary.</i></b> hebben alleen de kleuren opgeslagen</p>
                 <p>- en de classes <b><i>primary</i></b>, <b><i>secondary</i></b> en <b><i>neutral</i></b> hebben alleen een CSS property</p>
-                <p>- Om een achtergrond kleur aan te passen moet de class <b><i>primary</i></b> aanwezig zijn. De tweede class kan dan <b><i>veronica-primary, slam-primary, honderdp-primary of sublime-primary zijn.</i></b></p>
+                <p>- Om een achtergrond kleur aan te passen moet de class <b><i>primary</i></b> aanwezig zijn. De tweede class kan dan <b><i>veronica-primary, slam-primary, honderdp-primary of sublime-primary</i></b> zijn.</p>
             </article>
 
             <!-- Waarom werkt dit -->
             <article class="tekst">
                 <h3>Waarom werkt dit?</h3>
                 <p>- De class <b><i>primary</i></b> accepteert alleen <b><i>var(--brand-primary)</i></b> als variabel</p>
-                <p>- Deze variabel komt alleen voor in <b><i>veronica-primary, slam-primary, honderdp-primary en sublime-primary zijn.</i></b></p>
-                <p>- Als <b><i>primary veronica-secondary</i></b> ingevoerd wordt, dan gebeurt er niks. Omdat de class <b><i>veronica-secondary</i></b> <b><i>var(--brand-secondary)</i></b> als variabel heeft</p>
+                <p>- Deze variabel komt voor in <b><i>veronica-primary, slam-primary, honderdp-primary en sublime-primary</i></b></p>
+                <p>- Als <b><i>primary veronica-secondary</i></b> ingevoerd wordt, dan gebeurt er niks. Omdat de class <b><i>veronica-secondary</i></b> alleen <b><i>var(--brand-secondary)</i></b> als variabel accepteerd</p>
                 <p>- Dus als je <b><i>veronica-secondary</i></b> wilt gebruiken, dan moet je dat zo aangeven: <b><i>secondary veronica-secondary</i></b></p>
             </article>
 
             <!-- waarom is dit handig -->
             <article class="tekst">
                 <h3>Waarom is dit handig?</h3>
-                <p>Als ik nu een button wil toevoegen dan heb ik de kleuren als opgeslagen in classes. En omdat elke class dezelfde variabel heeft, is het mogelijk om 1 button te maken die voor alle 4 radiozenders werkt</p>
+                <p>Als ik nu een button wil toevoegen dan heb ik de kleuren al opgeslagen in classes. En omdat elke class dezelfde variabel heeft, is het mogelijk om 1 button te maken die voor alle 4 radiozenders zal werken</p>
             </article>
 
             <!-- button maken voorbeeld -->
@@ -301,10 +300,10 @@
 
             <!-- witte hover -->
             <article>
-                <h4>nieuwe button met hover maken</h4>
+                <h4>nieuwe hover kleur voor de button</h4>
                 <div class="tekst">
-                    <p>Om de achtergrond kleur van zwart naar wit te veranderen. is het niet nodig om de class <b><i>button-highlight</i></b> of <b><i>button-highlight:hover</i></b> aan te passen</p>
-                    <p>Je kan gewoon een nieuwe class maken in css, met <b><i>var(--brand-neutral)</i></b> en een witte kleur</p>
+                    <p>Om de hover achtergrond kleur van zwart naar wit te veranderen. is het niet nodig om de class <b><i>button-highlight</i></b> of <b><i>button-highlight:hover</i></b> in CSS aan te passen</p>
+                    <p>In CSS je kan een nieuwe class maken met <b><i>var(--brand-neutral)</i></b> en een witte kleur</p>
                 </div>
                 <pre>
                     <code class="language-css">
