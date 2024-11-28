@@ -39,13 +39,6 @@ op een open programma container kan de gebruiker horizontaal scrollen om door de
 ![desktop_2](https://github.com/user-attachments/assets/2a94f6b2-6de9-4f16-b080-f6d9accb29dd)
 ![desktop_3](https://github.com/user-attachments/assets/9b7e838b-8efc-4b8e-9508-48c2a20eddb0)
 
-### Eind resultaat
-hier is een video hoe de mobiele pagina werkt
-video
-
-hier is een video hoe de desktop pagina werkt
-video
-
 
 ## Kenmerken
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met Javascript gedaan en hoe? Misschien heb je een framwork of library gebruikt? -->
@@ -77,7 +70,12 @@ Voor deze sprint heb ik gebruik gemaakt van een gezaamelijke stylesheet voor:
 - achtergrond kleur
 - en typografie
 
-uitleg hoe stylesheet werkt
+Wij maken gebruik van 2 classes
+- de eerste class is er om een CSS property aan te geven
+- en de tweede class heeft de kleur
+
+voor beter uitleg over hoe dit werkt heb ik een webpagina gemaakt waar ik laat zien wat de voordelen zijn.
+link naar de pagina: https://vsheo.github.io/look-and-feel-corporate-identity/stylesheet_uitleg/uitleg.html
 
 
 ### javaScript
