@@ -2,7 +2,13 @@
 // dan de programma van die radiozender open.
 
 
-detailButton.forEach((button) => {
+// selecteer alle details elementen
+const details = document.querySelectorAll('details');
+// selecteer de buttons in de nav
+const buttons = document.querySelectorAll('openDetails');
+
+
+buttons.forEach((button) => {
     button.addEventListener('click', () => {
         if (detailElement.open) {
             details.forEach((overigDetail) => {
